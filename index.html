@@ -17,10 +17,11 @@
       --spacing-section-vertical: 4rem;
       --font-sans: 'Poppins', sans-serif;
     }
-    /* Reset and base */
+
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       background-color: var(--color-bg);
@@ -30,55 +31,59 @@
       font-weight: 300;
       scroll-behavior: smooth;
     }
-    h1,h2,h3 {
+
+    h1, h2, h3 {
       color: var(--color-text-primary);
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
+
     h1 {
       font-size: 3rem;
-      font-weight: 800;
     }
+
     h2 {
       font-size: 1.75rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
+
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: var(--color-accent);
     }
+
     p, ul {
       margin-top: 0;
       margin-bottom: 1rem;
-      color: var(--color-text-secondary);
     }
+
     ul {
       padding-left: 1.25rem;
     }
+
     a {
       text-decoration: none;
       color: var(--color-accent);
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     a:hover,
     a:focus {
       color: var(--color-accent-alt);
     }
-    /* Container */
+
     .container {
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      margin: auto;
+      padding: 0 1rem;
     }
-    /* Header */
+
     header {
       position: sticky;
       top: 0;
@@ -87,6 +92,7 @@
       z-index: 100;
       box-shadow: 0 2px 4px var(--shadow-light);
     }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -96,6 +102,7 @@
       margin: 0 auto;
       padding: 0 1rem;
     }
+
     .logo {
       font-weight: 800;
       font-size: 1.25rem;
@@ -103,34 +110,40 @@
       user-select: none;
       letter-spacing: -0.02em;
     }
+
     .nav-links {
       display: flex;
       gap: 1.5rem;
     }
+
     .nav-links a {
       font-weight: 600;
       padding: 0.25rem 0.5rem;
-      transition: color 0.3s ease;
       font-size: 0.95rem;
     }
-    .nav-links a:hover, .nav-links a:focus {
+
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: var(--color-accent-alt);
       border-bottom: 2px solid var(--color-accent-alt);
     }
-    /* Hero */
+
     .hero {
       text-align: center;
       padding: 6rem 1rem 4rem;
     }
+
     .hero h1 {
       margin-bottom: 0.25rem;
     }
+
     .hero p {
       font-weight: 600;
       font-size: 1.125rem;
       color: var(--color-text-secondary);
       margin-bottom: 2rem;
     }
+
     .btn-primary {
       background-color: var(--color-accent);
       color: white;
@@ -142,23 +155,15 @@
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      user-select: none;
     }
+
     .btn-primary:hover,
     .btn-primary:focus {
       background-color: var(--color-accent-alt);
       transform: scale(1.05);
       outline: none;
     }
-    /* Section */
-    section {
-      padding-top: var(--spacing-section-vertical);
-      padding-bottom: var(--spacing-section-vertical);
-    }
-    section + section {
-      border-top: 1px solid #e5e7eb;
-    }
-    /* Cards */
+
     .card {
       background: white;
       border-radius: var(--border-radius);
@@ -166,19 +171,17 @@
       padding: 2rem;
       margin-bottom: 2rem;
     }
-    /* Experience & Education Entries */
+
     .entry {
       margin-bottom: 1.5rem;
     }
-    .entry h3 {
-      margin-bottom: 0.25rem;
-    }
+
     .entry .date {
       font-size: 0.9rem;
       color: var(--color-text-secondary);
       margin-bottom: 0.5rem;
     }
-    /* Skills */
+
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -187,6 +190,7 @@
       padding: 0;
       margin: 0;
     }
+
     .skills-list li {
       background-color: #f3f4f6;
       color: var(--color-accent-alt);
@@ -195,15 +199,24 @@
       font-weight: 600;
       font-size: 0.9rem;
       box-shadow: 0 1px 3px var(--shadow-light);
-      user-select: none;
     }
-    /* Contact */
+
     .contact-info {
       font-size: 1rem;
       color: var(--color-text-primary);
       line-height: 1.4;
     }
-    /* Responsive */
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      border: 4px solid #e5e7eb;
+    }
+
     @media (min-width: 768px) {
       .hero {
         padding: 8rem 1rem 6rem;
@@ -230,77 +243,66 @@
 </header>
 
 <main class="container" role="main">
-  <section class="hero" id="hero" aria-label="Introduction section">
+  <section class="hero" id="hero">
+    <img src="img/teguh.jpg" alt="Teguh Winarno" class="profile-photo" />
     <h1>Teguh Winarno</h1>
-    <p>Elektrical Engineering</p>
-    <button href="E:/UNWIKU/PEMROGRAMAN LANJUT/teguh winarno.pdf" class="btn-primary" aria-label="Download CV">Download CV</button>
+    <p>Electrical Engineering</p>
+    <a href="cv/Teguh Winarno.pdf" class="btn-primary" download aria-label="Download CV">Download CV</a>
   </section>
 
-  <section id="about" aria-labelledby="about-title" class="card">
-    <h2 id="about-title">About Me</h2>
-    <p>
-        Dynamic MEP leader with a proven track record at RSUD Cilacap, 
-        excelling in energy management and MEP coordination.
-        Demonstrated expertise in troubleshooting and quality assurance, significantly reducing downtime.
-        A collaborative leader skilled in fostering teamwork and problem-solving,
-        driving project success through effective communication and strategic oversight.
-    </p>
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>Dynamic MEP leader with a proven track record at RSUD Cilacap, excelling in energy management and MEP coordination. Demonstrated expertise in troubleshooting and quality assurance, significantly reducing downtime.</p>
   </section>
 
-  <section id="experience" aria-labelledby="experience-title" class="card">
-    <h2 id="experience-title">Experience</h2>
-    <article class="entry" role="article" aria-label="Job at Company A">
+  <section id="experience" class="card">
+    <h2>Experience</h2>
+    <article class="entry">
       <h3>MEP Leader at RSUD Cilacap</h3>
       <div class="date">Feb 2021 - Present</div>
-      <p>Expedited issue resolution through effective collaboration with crossdisciplinary teams.</p>
-        <p>Ensured quality assurance by conducting thorough inspections of all MEP installations and repairs.</p> 
-        <p> Reduced downtime for MEP systems through timely troubleshooting and repair of malfunctions.</p>
+      <p>Reduced downtime for MEP systems through timely troubleshooting and repair of malfunctions.</p>
     </article>
-    <article class="entry" role="article" aria-label="Job at Company B">
+    <article class="entry">
       <h3>Electrical Engineer at PT. Supernova Flexible Packaging</h3>
       <div class="date">Jan 2020 - Nov 2020</div>
-      <p>Provided technical support to colleagues on complex issues, assisting them in finding efficient solutions to problems.</p>
-      <p>Evaluated electrical installations and systems to isolate faults and implement corrective actions.</p> 
-    </article>  
-    <article class="entry" role="article" aria-label="Job at Company C">
-        <h3>General Service Leader at PT. Pamapersada Nusantara</h3>
-        <div class="date">Nov 2018 - Nov 2019</div>
-        <p>Performed routine maintenance tasks to keep equipment running smoothly and prevent costly breakdowns.</p>
-        <p>Promoted a positive work atmosphere by fostering teamwork, maintaining open lines of communication with colleagues, and offering constructive feedback when necessary.</p> 
-    </article> 
-  </section>
-
-  <section id="education" aria-labelledby="education-title" class="card">
-    <h2 id="education-title">Education</h2>
-    <article class="entry" role="article" aria-label="Degree at University X">
-      <h3>Diploma Elekctrical Engineering at Politeknik Negeri Cilacap</h3>
-      <div class="date">2015 - 2018</div>
-      <p>Electrical Technician and Maintenance. Able to programming (PLC, Arduino, Pyton). Able to operate Microsoft Office (Word,Excel, Power Point). Successful working in a team environment, as well as independently. The ability to work under pressure and multi-task
-</p>
+      <p>Evaluated electrical installations and systems to isolate faults and implement corrective actions.</p>
+    </article>
+    <article class="entry">
+      <h3>General Service Leader at PT. Pamapersada Nusantara</h3>
+      <div class="date">Nov 2018 - Nov 2019</div>
+      <p>Promoted a positive work atmosphere by fostering teamwork and maintaining open communication.</p>
     </article>
   </section>
 
-  <section id="skills" aria-labelledby="skills-title" class="card">
-    <h2 id="skills-title">Skills</h2>
-    <ul class="skills-list" aria-label="List of skills">
-      <li>Skill Programming</li>
-      <li>Skill Troublesoting</li>
-      <li>Skill Analysis data</li>
-      <li>Skill Prediktif and preventif maintenance</li>
-      <li>Skill Office</li>
+  <section id="education" class="card">
+    <h2>Education</h2>
+    <article class="entry">
+      <h3>Diploma Electrical Engineering at Politeknik Negeri Cilacap</h3>
+      <div class="date">2015 - 2018</div>
+      <p>Electrical Technician and Maintenance. Skilled in PLC, Arduino, Python. Proficient in MS Office. Able to work under pressure and multi-task.</p>
+    </article>
+  </section>
+
+  <section id="skills" class="card">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Programming</li>
+      <li>Troubleshooting</li>
+      <li>Data Analysis</li>
+      <li>Predictive Maintenance</li>
+      <li>MS Office</li>
     </ul>
   </section>
 
-  <section id="contact" aria-labelledby="contact-title" class="card">
-    <h2 id="contact-title">Contact</h2>
-    <address class="contact-info" aria-label="Contact information">
-      <p>Email: <a href="mailto:your.email@example.com">teguhwinarno6@gmail.com</a></p>
-      <p>Phone: <a href="tel:+1234567890">+62 85747873027</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">https://www.linkedin.com/in/teguh-winarnobb748860/</a></p>
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <address class="contact-info">
+      <p>Email: <a href="mailto:teguhwinarno6@gmail.com">teguhwinarno6@gmail.com</a></p>
+      <p>Phone: <a href="tel:+6285747873027">+62 857 4787 3027</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/teguh-winarnobb748860/" target="_blank" rel="noopener">LinkedIn Profile</a></p>
     </address>
   </section>
 </main>
 
 </body>
 </html>
-
