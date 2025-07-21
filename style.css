@@ -10,6 +10,16 @@
   --font-sans: 'Poppins', sans-serif;
 }
 
+/* Dark mode overrides */
+body.dark-mode {
+  --color-bg: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d1d5db;
+  --color-accent: #facc15;
+  --color-accent-alt: #fde68a;
+  --shadow-light: rgba(255, 255, 255, 0.05);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -58,7 +68,7 @@ a:hover, a:focus {
 header {
   position: sticky;
   top: 0;
-  background: white;
+  background: var(--color-bg);
   border-bottom: 1px solid #e5e7eb;
   z-index: 100;
   box-shadow: 0 2px 4px var(--shadow-light);
@@ -134,15 +144,19 @@ nav {
 }
 
 .card {
-  background: white;
+  background: var(--color-bg);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px var(--shadow-light);
   padding: 2rem;
   margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
-.entry {
-  margin-bottom: 1.5rem;
+.card.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .entry .date {
@@ -161,13 +175,21 @@ nav {
 }
 
 .skills-list li {
-  background-color: #f3f4f6;
+  background-color: #516fa7;
   color: var(--color-accent-alt);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   font-weight: 600;
   font-size: 0.9rem;
   box-shadow: 0 1px 3px var(--shadow-light);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.skills-list li.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-info {
